@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <div
+            id="full-page"
+        >
+            <form>
+                <div
+                    class="tooltip"
+                >
+                    <div
+                        class="error-dialog"
+                    >
+                        <span
+                        >
+                            You must insert 1 or 2
+                        </span>
+                    </div>
+                    <div 
+                        class="arrow-down"
+                        ></div>
+                </div>
+                
+                <input
+                    name='binary'
+                    class="binary-input"
+                    pattern='[0,1]'
+                    minlength='1'
+                    maxlength='8'
+                    type='text'
+                />
+                <input
+                    type='submit'
+                />
+            </form>
+
+        </div>
+        <script 
+            src="index.js"
+         >
+        </script>
+    </body>
+    <style>
+        #full-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.error-dialog {
+            padding: 8px;
+            background-color:#C4C4C4;
+            width: 200px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            
+            border-top: 10px solid #C4C4C4;
+        }
+
+        .tooltip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+        }
+    </style>
+</html>
