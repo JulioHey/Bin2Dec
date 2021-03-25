@@ -1,6 +1,8 @@
 const validInputs = ["0", '1'];
 const input = document.querySelector('.binary-input');
 const errorDialog = document.querySelector('.tooltip');
+const submitButton = document.querySelector('.submit-button');
+const decimal = document.querySelector('.decimal');
 
 function checkIfInputIsValid(inputValue) {
     var value = inputValue.value;
@@ -14,4 +16,20 @@ function checkIfInputIsValid(inputValue) {
     }
 }
 
-input.setAttribute("oninput", "checkIfInputIsValid(binary)");
+function getKeyAndSubmit(e) {
+    if (e.keyCode === 13) {
+        submitFunction(e);
+    }
+}
+
+function submitFunction(e) {
+    e.preventDefault();
+    if (input.value) {
+        decimal.innerHTML = parseInt(input.value, 2);
+    }
+}
+
+input.setAttribute("oninput", "checkIfInputIsValid(input)");
+
+document.addEventListener('submit', submitFunction);
+document.addEventListener('keydown', getKeyAndSubmit);

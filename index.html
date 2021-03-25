@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
 
         <div
             id="full-page"
         >
-            <form>
+            <div
+                id="full-form"
+            >
                 <div
                     class="tooltip"
                 >
@@ -17,27 +20,39 @@
                     >
                         <span
                         >
-                            You must insert 1 or 2
+                            You must insert 1 or 0
                         </span>
                     </div>
-                    <div 
-                        class="arrow-down"
-                        ></div>
-                </div>
-                
-                <input
-                    name='binary'
-                    class="binary-input"
-                    pattern='[0,1]'
-                    minlength='1'
-                    maxlength='8'
-                    type='text'
-                />
-                <input
-                    type='submit'
-                />
-            </form>
 
+                </div>
+                <form>
+                    <input
+                        name='binary'
+                        class="binary-input"
+                        minlength='1'
+                        type='text'
+                    />
+                    <input
+                        class="submit-button"
+                        type='submit'
+                    />
+                </form>
+
+                <div>
+                    <span>Converted Bin2Dec:</span>
+                    <div
+                        class="converted-div"
+                    >
+                        <text
+                        class='decimal'
+                        >
+                        </text>
+                    </div>
+
+                </div>
+
+            </div>
+           
         </div>
         <script 
             src="index.js"
@@ -45,29 +60,56 @@
         </script>
     </body>
     <style>
+
+        body {
+            height: 100vh; 
+            width: 100vw;
+            background: #000;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier Prime';
+
+        }
         #full-page {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            height: 100vh; 
+            width: 100vw;
+            background: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .full-form {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            flex-direction: column;
+        }
+
+        .binary-input {
+            margin-top: 50px;
+            font-size: 50px;
+            border: solid 15px #4AE742;
+            font-family: 'Courier Prime';
+
+            padding: 20px;
+            line-height: 60px;
+            width: 90vw;
+            background: #000;
+            color: #4AE742;
+            outline: none;
         }
 
         div.error-dialog {
-            padding: 8px;
-            background-color:#C4C4C4;
-            width: 200px;
+            padding: 20px;
             border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .arrow-down {
-            width: 0; 
-            height: 0; 
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            
-            border-top: 10px solid #C4C4C4;
         }
 
         .tooltip {
@@ -76,6 +118,52 @@
             align-items: center;
 
             flex-direction: column;
+            position: absolute;
+            padding: 20px;
+            top: 20px;
+
         }
+
+        span {
+            font-size: 50px;
+            color: #4AE742;
+        }
+
+        div.converted-div {
+            border: solid 15px #4AE742;
+            height: 60px;
+            width: 90vw;
+            padding: 20px;
+
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        text {
+            font-size: 50px;
+            padding: 20px;
+            color: #4AE742;
+        }
+
+        form {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            flex-direction: column;
+        }
+
+        .submit-button {
+            font-size: 50px;
+            padding: 20px 40px;
+            color: #4AE742;
+            background-color: #000;
+            border: solid 15px #4AE742;
+            outline: none;
+            margin-top: 30px;
+            
+        }
+
     </style>
 </html>
